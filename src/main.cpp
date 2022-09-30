@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
-
+//Changes
 int main(int argc, char *argv[]) {
   sf::RenderWindow window(sf::VideoMode(1120, 800),
                           "Animation works! In concept");
