@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <animationFunctions.hpp>
 #include <iostream>
 //Changes
 int main(int argc, char *argv[]) {
@@ -46,25 +47,10 @@ int main(int argc, char *argv[]) {
       if (event.type == sf::Event::Closed)
         window.close();
     }
-    // Below: Clock functionality imported alongside spritesheet code
-    if (dogClock.getElapsedTime().asSeconds() > 1.0f) {
-      if (sourceSprite.left == 64) // left edge of rect in last sprite
-        sourceSprite.left = 0;     // set back to first sprite
-      else
-        sourceSprite.left += 64; // move over width of 1 sprite
-
-      dogTest.setTextureRect(sourceSprite);
-      dogClock.restart();
-    } // Above: Dog clock, Below: Numbers clock
-    if (numClock.getElapsedTime().asSeconds() > 1.0f) {
-      if (numSourceSprite.left >= 287) //displaying 9
-        numSourceSprite.left = 0;     // set back to 0
-      else
-        numSourceSprite.left += 32; // move over width of 1 sprite
-
-      numbers.setTextureRect(numSourceSprite);
-      numClock.restart();
-    }
+    // Iterate all active sprites (defined in animationfunctions.hpp)
+    iterateSprite(dogClock, dogTest, sourceSprite, 64, 0, 64);
+    iterateSprite(numClock, numbers, numSourceSprite, 287, 0, 32);
+    
     // End imported code. Below: Regular window rendering
     window.clear();
     window.draw(text);
