@@ -1,4 +1,2 @@
-# SFML videogame
-## SENG Studio Team Project - Epic Gamers
-
-Using the SFML library with c++, we've chosen to create an infinite runner game. Due to the tastefully limited scope of this genre of games, our goal is to provide the player with the most polished and engaging experience possible.
+# SFML videogame (old)
+This is the repository connected to Replit, but we've since had to migrate back to our old repository, at https://github.com/Lunatic-Labs/Demo1_EpicGamers
